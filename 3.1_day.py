@@ -65,15 +65,15 @@ if aiResponse.tool_calls:
                 "name": func_name
             })
     
-    print("⏳ 2. Data AI ko bhej diya, final answer ban raha hai...\n")
+    print("2. Data AI ko bhej diya, final answer ban raha hai...\n")
 
     final_response = client.chat.completions.create(
         messages=chat_messages,
         model="llama-3.1-8b-instant",
     )
 
-    print("🤖 Final AI Answer:")
+    print("Final AI Answer:")
     print(final_response.choices[0].message.content)
 
 else:
-    print("🤖 AI Answer:", aiResponse.content)
+    print("AI Answer:", aiResponse.content)
