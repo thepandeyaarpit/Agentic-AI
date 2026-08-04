@@ -93,19 +93,19 @@ class MiniAssistent:
                     "content": result
                 })
 
-            final_response = self.client.chat.completions.create(
+            finalResponse = self.client.chat.completions.create(
                 messages = self.memory,
                 model=self.model
             )
 
-            final_text = final_response.choices[0].message.content
+            finalText = finalResponse.choices[0].message.content
 
             self.memory.append({
                 "role": "assistant",
-                "content": final_text
+                "content": finalText
             })
 
-            return final_text
+            return finalText
         else:
             return aiResponse.content
 
